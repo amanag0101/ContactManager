@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" th:replace="user/template::layout(~{::section})">
+<body>
+	<section class="dashboard">
+		<div th:if="${contactsSize != 0}" class="container">	
+			<h1 class="heading">Contacts</h1>		
+			
+			<table class="contactTable">
+				<tr class="row" th:each="c : ${contacts}">
+					<td class="col1">
+						<img class="profileImage" th:src="@{'/img/' + ${c.imageUrl}}" alt="profileImage">
+						<p class="name" th:text="${c.name}"></p>
+					</td>
+					
+					<td class="col2">
+						<a class="email" th:href="@{'/user/' + ${c.id} + '/contact'}"><span th:text="${c.email}"></span></a>
+					</td>
+					
+					<td class="col3">
+						<a class="phone" th:text="${c.phone}"></a>
+					</td>
+					
+					<td class="col4">
+						<a class="viewProfileLink"  th:href="@{'/user/' + ${c.id} + '/contact'}">View Profile</a>
+						<a class="deleteLink" th:href="@{'/user/delete/' + ${c.id}}">Delete</a>
+					</td>
+				</tr>
+			</table>
+			
+			<div class="pagination">
+				<a th:if="${currentPage != 0}"  th:href="@{'/user/dashboard/'+${currentPage - 1}}">&laquo;</a>
+				<a th:classappend="${currentPage==i-1?'active':''}" th:each="i : ${#numbers.sequence(1,totalPages)}" th:href="@{'/user/dashboard/'+${i-1}}"><span th:text="${i}"></span></a>
+				<a th:if="${currentPage+1 != totalPages}"  th:href="@{'/user/dashboard/'+${currentPage + 1}}">&raquo;</a>
+			</div>
+		</div>
+		
+		<div th:unless="${contactsSize != 0}" class="container">
+			<p>Your contacts will be shown here.</p>
+		</div>
+	</section>
+</body>
+</html>

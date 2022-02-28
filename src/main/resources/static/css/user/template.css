@@ -1,0 +1,385 @@
+/*
+	#2c2c32 (black)
+	#3f3f47 (gray)
+
+	#0066b8 (blue)
+	#054d86 (blue) (hover)
+	
+	#fff (white)
+    #e06507 (orange)
+*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    background-color: #2c2c32;
+    color: #fff;
+}
+
+/* Top Navigation Bar */
+.template .topnav {
+    background-color: #0066b8;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.template .topnav .col2 {
+    flex: 1;
+    text-align: right;
+    margin-right: 20px;
+}
+
+/* Side Navigation Ban and Content */
+.template .flexContainer {
+    display: flex;
+    height: 92vh;
+}
+
+/* Side Navaigation Bar */
+.template .flexContainer .sidenav {
+    background-color: #3f3f47;
+    flex-basis: 20%;
+    padding: 5px;
+}
+
+.template .flexContainer .sidenav .crossbtn {
+    color: #fff;
+    text-align: right;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.template .flexContainer .sidenav a {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px 12px;
+    text-align: left;
+    text-decoration: none;
+    color: #fff;
+}
+
+.template .flexContainer .sidenav .active {
+	background-color: #0066b8;
+}
+
+.template .flexContainer .sidenav a:hover {
+    background-color: #0066b8;
+}
+
+/* Content */
+.template .flexContainer .content {
+    background-color: #2c2c32;
+    flex-basis: 100%;
+    padding: 5px;
+    text-align: center;
+}
+
+.template .flexContainer #hamburger {
+    display: none;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+
+/* Dashboard */
+.dashboard {
+	max-width: 99%;
+	margin: auto;
+}
+
+.dashboard .container {
+	background-color: #3f3f47;
+	color: #fff;
+	padding: 10px;
+	height: 91vh;
+}
+
+.dashboard .container .heading {
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.dashboard .contactTable {
+	width: 100%;
+}
+
+.dashboard .contactTable td {
+	border: 1px solid gray;
+}
+
+.dashboard .contactTable .profileImage {
+	height: 40px;
+	object-fit: cover;
+	border-radius: 50%;
+}
+
+.dashboard .contactTable .col1 {
+	display: flex;
+	align-items: center;
+	padding: 5px;
+}
+
+.dashboard .contactTable .col1 .profileImage {
+	margin-left: 5px;
+}
+
+.dashboard .contactTable .col1 .name {
+	margin-left: 20px;
+}
+
+.dashboard .contactTable .email {
+	text-decoration: none;
+	color: #0066b8;
+}
+
+.dashboard .viewProfileLink {
+	background-color: #0066b8;
+	text-decoration: none;
+	color: #fff;
+	margin-right: 10px;
+	padding: 8px;
+}
+
+.dashboard .viewProfileLink:hover {
+	background-color: #054d86;
+}
+
+.dashboard .deleteLink {
+	background-color: #e30707;
+	text-decoration: none;
+	color: #fff;
+	padding: 8px;
+}
+
+.dashboard .deleteLink:hover {
+	background-color: #054d86;
+} 
+
+.dashboard .pagination {
+	margin-top: 20px;
+}
+
+.dashboard .pagination a {
+	text-decoration: none;
+	color: #fff;
+	padding: 8px 16px;
+}
+
+.dashboard .pagination a:hover {
+	background-color: #054d86;
+	color: #fff;
+}
+
+.dashboard .pagination a.active {
+	background-color: #e30707;
+}
+
+/* Add Contact Form */
+.addContactForm .container {
+    background-color: #3f3f47;
+    max-width: 99%;
+    margin: auto;
+    padding: 10px;
+}
+
+.addContactForm .container #errorMessage .error {
+	text-align: left;
+	color: #e30707;
+	margin-top: 5px;
+	margin-left: 4px;
+}
+
+.addContactForm .container #errorMessage .success {
+	text-align: left;
+	color: green;
+	margin-top: 5px;
+	margin-left: 4px;
+}
+
+.addContactForm .container input[type=text] {
+    width: 100%;
+    margin-top: 20px;
+    padding: 14px 16px;
+    border: none;
+}
+
+.addContactForm .container button {
+	background-color: #0066b8;
+	color: #fff;
+	cursor: pointer;
+	margin-top: 20px;
+	padding: 14px 16px;
+	border: none;
+}
+
+.addContactForm .container button:hover {
+	background-color: #054d86;
+}
+
+/* Edit Profile Page */
+.editProfile .container {
+	background-color: #3f3f47;
+	max-width: 99%;
+	margin: auto;
+	padding: 20px;
+}
+
+.editProfile .profileImg {
+	border-radius: 50%;
+	height: 100px;
+}
+
+.editProfile .container .row {
+	display: flex;
+}
+
+.editProfile .container .row .col2, .editProfile .container .row .col3 {
+	margin-left: 5px;
+}
+
+.editProfile input[type=text] {
+    width: 100%;
+    padding: 14px 16px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 6px;
+}
+
+.editProfile .socialmedia {
+	display: flex;
+	text-align: left;
+	margin-top: 10px;
+	margin-left: 3px;
+}
+
+.editProfile .socialmedia a {
+	text-decoration: none;
+	color: #0066b8;
+	margin-left: 10px;
+}
+
+.editProfile .socialmedia a:hover {
+	color: #054d86;
+}
+
+.editProfile .socialmedia .removeLink {
+	color: #e30707;
+}
+
+.editProfile .container .about {
+	width: 100%;
+	margin-top: 20px;
+}
+
+.editProfile .editImage {
+	margin-top: 15px;
+	margin-left: 4px;
+	text-align: left;
+}
+
+.editProfile button {
+	background-color: #0066b8;
+	color: #fff;
+    width: 100%;
+    padding: 14px 16px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.editProfile button:hover {
+	background-color: #054d86;
+}
+
+@media  screen and (max-width: 500px) {
+	.editProfile .container .row {
+		flex-direction: column;
+	}
+	
+	.editProfile .container .row .col2, .editProfile .container .row .col3 {
+		margin-left: 0px;
+	}
+}
+
+/* User Profile */
+.viewProfile .container {
+	background-color: #3f3f47;
+	max-width: 99%;
+	margin: auto;
+	padding: 10px;
+}
+
+.viewProfile .container .general p {
+	margin-top: 10px;
+}
+
+.viewProfile .profileImg {
+	border-radius: 50%;
+	height: 150px;
+}
+
+.viewProfile .socialmedia {
+	display: flex;
+	margin-top: 10px;
+	text-align: left;
+}
+
+.viewProfile .socialmedia a {
+	text-decoration: none;
+	color: #0066b8;
+	margin-left: 10px;
+}
+
+.viewProfile .socialmedia a:hover {
+	color: #054d86;
+}
+
+.viewProfile .about {
+	margin-top: 20px;
+}
+
+/* Show Contact Details */
+.contactDetails .container {
+	background-color: #3f3f47;
+	padding: 10px;
+	max-width: 99%;
+	margin: auto;
+}
+
+.contactDetails .profileImg {
+	height: 150px;
+	border-radius: 50%;
+}
+
+.contactDetails .general p {
+	margin-top: 5px;
+}
+
+.contactDetails .socialmedia {
+	display: flex;
+	margin-top: 10px;
+	text-align: left;
+}
+
+.contactDetails .socialmedia a {
+	text-decoration: none;
+	color: #0066b8;
+	margin-left: 10px;
+}
+
+.contactDetails .socialmedia a:hover {
+	color: #054d86;
+}
+
+.contactDetails .about {
+	margin-top: 30px;
+}

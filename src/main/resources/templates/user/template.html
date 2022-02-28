@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:fragment="layout(content)">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/user/template.css}">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title th:text="${pageTitle}"></title>
+</head>
+<body>
+    <div class="template">
+        <div class="topnav">
+            <h2 id="branding">Contact Manager</h2>
+            
+            <div class="col2">
+                <p>Hello, <span th:text="${user.name}"></span></p>
+            </div>
+        </div>
+
+        <div class="flexContainer">
+            <div id="sidenav" class="sidenav">
+                <p class="crossbtn" onclick="toggleSidebar()">&times;</p>
+                <a th:href="@{/user/dashboard/0}">Dashboard</a>
+                <a th:href="@{/user/add-contact}">Add Contact</a>
+                <a th:href="@{/user/edit-profile}">Edit Profile</a>
+                <a th:href="@{/user/view-profile}">View Profile</a>
+                <a th:href="@{/logout}">Logout</a>
+            </div>
+			
+			<i class="fa-solid fa-bars" id="hamburger" onclick="toggleSidebar()"></i>
+	
+            <div class="content">
+                <div th:replace='${content}'></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/user/template.js"></script>
+    <script src="https://kit.fontawesome.com/75dfcc00f1.js"></script>
+</body>
+</html>

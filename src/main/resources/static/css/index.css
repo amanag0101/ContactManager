@@ -1,0 +1,111 @@
+/*
+	background-color: #2c2c32 (black)
+	
+	button color: #0066b8 (blue)
+	button color (hover): #054d86 (blue)
+	
+	font-color: #fff (white)
+	
+	color: #e30707 (red)
+*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    background-color: #2c2c32;
+    color: #fff;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#branding {
+    flex-basis: 30%;
+}
+
+.content {
+    flex-basis: 40%;
+    border: 1px solid #fff;
+    border-radius: 6px;
+    padding: 10px;
+}
+
+#errorMessage {
+	text-align: left;
+	color: #e30707;
+	margin-left: 4px;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 14px 16px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 6px;
+}
+
+.passwordReset {
+	text-align: left;
+	margin-top: 15px;
+	margin-left: 4px;
+}
+
+.passwordReset a {
+	text-decoration: none;
+	color: #0066b8;
+}
+
+.passwordReset a:hover {
+	color: #054d86;
+}
+
+button {
+    background-color: #0066b8;
+    color: #fff;
+    width: 100%;
+    padding: 14px 16px;
+    margin-top: 20px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #054d86;
+} 
+
+.registerLink {
+    margin-top: 15px;
+}
+
+.registerLink a {
+    text-decoration: none;
+    color: #0066b8;
+}
+
+.registerLink a:hover {
+    color: #054d86;
+}
+
+@media screen and (max-width: 500px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    .container #branding {
+    	flex-basis: 20%;
+    }
+    
+    .container .content {
+    	flex-basis: 30%;
+    	border-radius: 1px;
+    }
+}

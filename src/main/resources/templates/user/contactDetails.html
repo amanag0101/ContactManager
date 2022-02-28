@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" th:replace="user/template::layout(~{::section})">
+<body>
+	<section class="contactDetails">
+		<div th:if="${contact != null}" class="container">		
+			<img class="profileImg" th:src="@{'/img/' + ${contact.imageUrl}}" alt="profile-image">
+	
+			<div class="general">
+				<p th:text="${contact.name}"></p>
+				<p th:text="${contact.email}"></p>
+				<p th:text="${contact.phone}"></p>
+			</div>
+			
+			<th:block th:each="link : ${socialLinks}">
+				<div class="socialmedia">
+					<p th:text="${link.brand}"></p>
+					<a th:href="${link.profileUrl}" th:text="${link.profileUrl}"></a>
+				</div>
+			</th:block>
+			
+			<div class="about">
+				<p th:text="${contact.about}"></p>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

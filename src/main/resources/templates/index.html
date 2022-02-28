@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{css/index.css}">
+    <title>Contact Manager</title>
+</head>
+<body>
+    <div class="container">
+        <div id="branding">
+            <h1>Contact Manager</h1>
+            <h3>Fast, Simple and Secure</h3>
+        </div>
+
+        <div class="content">
+			<div id="errorMessage">
+				<p th:if="${param.error}">Invalid username or password!</p>
+			</div>
+			
+			<form th:action="@{/login}" method="post">  	
+                <input type="text" name="username" placeholder="Email">
+                <input type="password" name="password" placeholder="Password">
+                
+                <div class="passwordReset">
+                	<a href="#">Forgotten Password?</a>
+                </div>
+                
+                <button type="submit">Login</button>
+                <p class="registerLink">Don't have an account ? <a th:href="@{register}">Register</a></p>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

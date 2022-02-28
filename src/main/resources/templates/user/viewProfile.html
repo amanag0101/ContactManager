@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" th:replace="user/template::layout(~{::section})">
+<body>
+	<section class="viewProfile">
+		<div class="container">
+			<div class="general">
+				<img class="profileImg" th:src="@{'/img/' + ${user.imageUrl}}" alt="profile-image">
+				<p class="name" th:text="${user.name}"></p>
+				<p class="email" th:text="${user.email}"></p>
+				<p class="phone" th:text="${user.phone}"></p>
+			</div>
+			
+			<th:block th:each="link : ${socialLinks}">
+				<div class="socialmedia">
+					<p th:text="${link.brand}"></p>
+					<a href="#" th:text="${link.profileUrl}"></a>
+				</div>
+			</th:block>
+			
+			<div class="about">
+				<p th:text="${user.about}"></p>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

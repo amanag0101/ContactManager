@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" th:replace="user/template::layout(~{::section})">
+<body>
+	<section>
+		<div class="editProfile">
+			<div class="container">
+				<form th:object="${user}" th:action="@{/user/update-profile}" th:method="post" enctype="multipart/form-data">
+					<img class="profileImg" th:src="@{'/img/' + ${user.imageUrl}}" alt="profile-image">
+				
+					<div class="row1 row">
+						<input class="col1 col" type="text" name="name" placeholder="Name" th:value="${user.name}">
+						<input class="col2 col" type="text" name="email" placeholder="Email" th:value="${user.email}">
+						<input class="col3 col" type="text" name="phone" placeholder="Phone Number" th:value="${user.phone}">
+					</div>
+					
+					<div class="row2 row">
+						<input class="col1 col" type="text" name="socialmediaBrand" placeholder="Brand">
+						<input class="col2 col" type="text" name="socialmediaLink" placeholder="Add Link">	
+					</div>
+					
+					<th:block th:each="link : ${socialLinks}">
+						<div class="socialmedia">
+							<p th:text="${link.brand}"></p>
+							<a th:href="${link.profileUrl}" th:text="${link.profileUrl}"></a>
+							<a class="removeLink" th:href="@{'/user/delete-link/' + ${link.id}}">remove</a>
+						</div>
+					</th:block>
+					
+					<textarea class="about" rows="8" name="about" placeholder="Write something about yourself..." th:text="${user.about}" th:value="${user.about}"></textarea>
+					
+					<div class="editImage">
+						<label for="profileImage"><b>Profile Image</b></label>
+						<input type="file" name="profileImage">
+					</div>
+					
+					<button type="submit">Update Profile</button>
+				</form>
+			</div>
+		</div>
+	</section>
+</body>
+</html>
