@@ -1,4 +1,4 @@
-# ContactMangager
+# ContactManager
 
 Spring Boot Web Application to manage Contacts.
 
